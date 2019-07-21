@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TouchableHighlight, Image, Text } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 
 function Output(props) {
 
@@ -24,7 +25,7 @@ function Output(props) {
             marginTop: 4,
             marginRight: 4,
             height: 30,
-            width: 70,
+            width: 80,
             justifyContent: 'center',
             alignItems: 'center',
             backgroundColor: props.scheme.color4,          
@@ -93,7 +94,7 @@ function Output(props) {
                     underlayColor={props.scheme.color4}              
                 >
                     <View>
-                        <Text style={styles.buttonText}>Random</Text>
+                        <Text style={styles.buttonText}>Random <FontAwesome name="random" color={props.scheme.color5} /></Text>
                     </View>
                 </TouchableHighlight>
             </View>

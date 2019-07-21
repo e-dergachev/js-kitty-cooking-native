@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
+import Constants from 'expo-constants';
 
 function Input(props) {
 
@@ -14,6 +15,12 @@ function Input(props) {
       marginBottom: 15,
       borderColor: props.scheme.color5,
     },
+    defaultTopMargin: {
+      marginTop: 15,
+    },
+    bigTopMargin: {
+      marginTop: Constants.statusBarHeight + 72,
+    },
     search: {
       width: '95%',
       borderBottomWidth: 2,
@@ -23,7 +30,7 @@ function Input(props) {
   });
 
   return (
-    <View style={styles.input}>
+    <View style={{...styles.input, ...props.navFolded ? styles.defaultTopMargin : styles.bigTopMargin}}>
       <TextInput
         style={styles.search} 
         placeholder="What dish are you going to cook?"

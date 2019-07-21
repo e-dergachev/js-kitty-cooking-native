@@ -9,6 +9,7 @@ import colors from './colors.js';
 function App() {
   const [colorScheme, setColorScheme] = useState("lavender");
   const [fontLoaded, setFontLoadingStatus] = useState(false);
+  const [navFolded, setNavFolded] = useState(true);
 
   async function loadFont() {
     await Font.loadAsync({
@@ -31,9 +32,12 @@ function App() {
     <View style={styles.container}>
       <NavBar 
         scheme={colors[colorScheme]}
+        navFolded={navFolded}
+        setNavFolded={setNavFolded}
       />
       <Input 
         scheme={colors[colorScheme]}
+        navFolded={navFolded}
       />
       <Output 
         scheme={colors[colorScheme]}

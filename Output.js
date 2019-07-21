@@ -40,8 +40,9 @@ function Output(props) {
             color: props.scheme.color8,
         },
         appTitle: {
-            fontSize: 25,
+            fontSize: 30,
             color: props.scheme.color6,
+            fontFamily: 'indie-flower',
         },
         simpleText: {
             color: props.scheme.color6,
@@ -98,7 +99,7 @@ function Output(props) {
                     </View>
                 </TouchableHighlight>
             </View>
-            <Text style={styles.appTitle}>JS Kitty Cooking</Text>
+            {props.fontLoaded ? (<Text style={styles.appTitle}>JS Kitty Cooking</Text>) : null}
             <Text style={styles.simpleText}>Old recipes from ancient cookbooks</Text>
             <Image
                 source={require('./assets/kitty.png')}

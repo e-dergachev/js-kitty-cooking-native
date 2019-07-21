@@ -3,7 +3,7 @@ import { StyleSheet, View, TouchableHighlight, Image, Text } from 'react-native'
 
 function Output(props) {
 
-    const [pressStatus, setPressStatus] = useState({lavender: false, green: false, pink: false});
+    const [pressStatus, setPressStatus] = useState({random: false, lavender: false, green: false, pink: false});
 
     const styles = StyleSheet.create({
         output: {
@@ -14,11 +14,35 @@ function Output(props) {
             height: '55%',
             borderColor: props.scheme.color5,
         },
+        outputCap: {
+            flexDirection: 'row-reverse',
+            width: '100%',
+        },
+        button: {
+            borderColor: props.scheme.color5,
+            borderRadius: 7,
+            marginTop: 4,
+            marginRight: 4,
+            height: 30,
+            width: 70,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: props.scheme.color4,          
+        },
+        buttonNotPressed: {
+            borderWidth: 1,
+        },        
+        buttonPressed: {
+            borderWidth: 2,
+        },
+        buttonText: {
+            color: props.scheme.color8,
+        },
         appTitle: {
             fontSize: 25,
             color: props.scheme.color6,
         },
-        appSubtitle: {
+        simpleText: {
             color: props.scheme.color6,
         },
         kitty: {
@@ -40,9 +64,6 @@ function Output(props) {
             width: 65, 
             height: 45,
         },
-        themeMsg: {
-            color: props.scheme.color6,
-        },
         lavender: {
             backgroundColor: '#e6e6fa',
         },
@@ -63,19 +84,32 @@ function Output(props) {
 
     return (
         <View style={styles.output}>
+            <View style={styles.outputCap}>
+                <TouchableHighlight
+                    onPress={() => {}}
+                    onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, random: false}})}
+                    onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, random: true}})}
+                    style={{...pressStatus['random'] ? styles.buttonPressed : styles.buttonNotPressed, ...styles.button}}
+                    underlayColor={props.scheme.color4}              
+                >
+                    <View>
+                        <Text style={styles.buttonText}>Random</Text>
+                    </View>
+                </TouchableHighlight>
+            </View>
             <Text style={styles.appTitle}>JS Kitty Cooking</Text>
-            <Text style={styles.appSubtitle}>Old recipes from ancient cookbooks</Text>
+            <Text style={styles.simpleText}>Old recipes from ancient cookbooks</Text>
             <Image
                 source={require('./assets/kitty.png')}
                 style={styles.kitty}
                 resizeMode='contain'
             />
-            <Text style={styles.themeMsg}>Choose a color scheme:</Text>
+            <Text style={styles.simpleText}>Choose a color scheme:</Text>
             <View style={styles.themes}>
                 <TouchableHighlight 
                     onPress={() => props.setColorScheme("lavender")}
-                    onHideUnderlay={() => {setPressStatus(prevState => {return {...prevState, lavender: false}})}}
-                    onShowUnderlay={() => {setPressStatus(prevState => {return {...prevState, lavender: true}})}}
+                    onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, lavender: false}})}
+                    onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, lavender: true}})}
                     style={{...pressStatus['lavender'] ? styles.themePressed : styles.theme, ...styles.lavender}}
                     underlayColor='#e6e6fa'
                 >
@@ -83,8 +117,8 @@ function Output(props) {
                 </TouchableHighlight>
                 <TouchableHighlight 
                     onPress={() => props.setColorScheme("green")}
-                    onHideUnderlay={() => {setPressStatus(prevState => {return {...prevState, green: false}})}}
-                    onShowUnderlay={() => {setPressStatus(prevState => {return {...prevState, green: true}})}}
+                    onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, green: false}})}
+                    onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, green: true}})}
                     style={{...pressStatus['green'] ? styles.themePressed : styles.theme, ...styles.green}}
                     underlayColor='#b3ff99'
                 >
@@ -92,8 +126,8 @@ function Output(props) {
                 </TouchableHighlight>
                 <TouchableHighlight 
                     onPress={() => props.setColorScheme("pink")}
-                    onHideUnderlay={() => {setPressStatus(prevState => {return {...prevState, pink: false}})}}
-                    onShowUnderlay={() => {setPressStatus(prevState => {return {...prevState, pink: true}})}}
+                    onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, pink: false}})}
+                    onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, pink: true}})}
                     style={{...pressStatus['pink'] ? styles.themePressed : styles.theme, ...styles.pink}}
                     underlayColor='#efa7c0'
                 >

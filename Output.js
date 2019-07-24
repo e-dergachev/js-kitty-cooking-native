@@ -43,16 +43,27 @@ function Output(props) {
             fontSize: 30,
             color: props.scheme.color6,
             fontFamily: 'indie-flower',
+            marginBottom: 3,
         },
         simpleText: {
             color: props.scheme.color6,
+            textAlign: 'center',
+        },
+        kittyBox: {
+            flex: 1,
+            justifyContent: 'center',
+            marginBottom: 5,
         },
         kitty: {
-            width: '75%',
+            height: 110,
+        },
+        bottom: {
+            justifyContent: "flex-end",
         },
         themes: {
             flexDirection: 'row',
             justifyContent: 'center',
+            marginTop: 5,
         },
         theme: {
             borderWidth: 1,
@@ -81,6 +92,8 @@ function Output(props) {
             fontSize: 11,
             textAlign: 'center',
             color: props.scheme.color6,
+            marginBottom: 5,
+            marginTop: 5,
         },
     });
 
@@ -101,42 +114,46 @@ function Output(props) {
             </View>
             {props.fontLoaded ? (<Text style={styles.appTitle}>JS Kitty Cooking</Text>) : null}
             <Text style={styles.simpleText}>Old recipes from ancient cookbooks</Text>
-            <Image
-                source={require('./assets/kitty.png')}
-                style={styles.kitty}
-                resizeMode='contain'
-            />
-            <Text style={styles.simpleText}>Choose a color scheme:</Text>
-            <View style={styles.themes}>
-                <TouchableHighlight 
-                    onPress={() => props.setColorScheme("lavender")}
-                    onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, lavender: false}})}
-                    onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, lavender: true}})}
-                    style={{...pressStatus['lavender'] ? styles.themePressed : styles.theme, ...styles.lavender}}
-                    underlayColor='#e6e6fa'
-                >
-                    <View />
-                </TouchableHighlight>
-                <TouchableHighlight 
-                    onPress={() => props.setColorScheme("green")}
-                    onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, green: false}})}
-                    onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, green: true}})}
-                    style={{...pressStatus['green'] ? styles.themePressed : styles.theme, ...styles.green}}
-                    underlayColor='#b3ff99'
-                >
-                    <View />
-                </TouchableHighlight>
-                <TouchableHighlight 
-                    onPress={() => props.setColorScheme("pink")}
-                    onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, pink: false}})}
-                    onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, pink: true}})}
-                    style={{...pressStatus['pink'] ? styles.themePressed : styles.theme, ...styles.pink}}
-                    underlayColor='#efa7c0'
-                >
-                    <View />
-                </TouchableHighlight>
+            <View style={styles.kittyBox}>
+                <Image
+                    source={require('./assets/kitty.png')}
+                    style={styles.kitty}
+                    resizeMode='contain'
+                />
             </View>
-            <Text style={styles.legal}>All the recipes are taken from the public domain books on Guttenberg.com</Text>
+            <View style={styles.bottom}>
+                <Text style={styles.simpleText}>Choose a color scheme:</Text>
+                <View style={styles.themes}>
+                    <TouchableHighlight 
+                        onPress={() => props.setColorScheme("lavender")}
+                        onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, lavender: false}})}
+                        onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, lavender: true}})}
+                        style={{...pressStatus['lavender'] ? styles.themePressed : styles.theme, ...styles.lavender}}
+                        underlayColor='#e6e6fa'
+                    >
+                        <View />
+                    </TouchableHighlight>
+                    <TouchableHighlight 
+                        onPress={() => props.setColorScheme("green")}
+                        onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, green: false}})}
+                        onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, green: true}})}
+                        style={{...pressStatus['green'] ? styles.themePressed : styles.theme, ...styles.green}}
+                        underlayColor='#b3ff99'
+                    >
+                        <View />
+                    </TouchableHighlight>
+                    <TouchableHighlight 
+                        onPress={() => props.setColorScheme("pink")}
+                        onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, pink: false}})}
+                        onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, pink: true}})}
+                        style={{...pressStatus['pink'] ? styles.themePressed : styles.theme, ...styles.pink}}
+                        underlayColor='#efa7c0'
+                    >
+                        <View />
+                    </TouchableHighlight>
+                </View>
+                <Text style={styles.legal}>All the recipes are taken from the public domain books on Guttenberg.com</Text>
+            </View>
         </View>
     );
 }

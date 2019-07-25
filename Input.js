@@ -10,7 +10,7 @@ function Input(props) {
       borderWidth: 1,
       alignItems: 'center',
       width: '85%',
-      height: '25%',
+      height: 150,
       marginTop: 15,
       marginBottom: 15,
       borderColor: props.scheme.color5,

@@ -12,8 +12,9 @@ function Output(props) {
             borderWidth: 1,
             alignItems: 'center',
             width: '90%',
-            height: '55%',
             borderColor: props.scheme.color5,
+            marginBottom: 15,
+            flex: 1,
         },
         outputCap: {
             flexDirection: 'row-reverse',
@@ -55,7 +56,7 @@ function Output(props) {
             marginBottom: 5,
         },
         kitty: {
-            height: 110,
+            height: '70%'//110,
         },
         bottom: {
             justifyContent: "flex-end",

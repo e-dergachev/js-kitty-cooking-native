@@ -23,8 +23,8 @@ function Output(props) {
         button: {
             borderColor: props.scheme.color5,
             borderRadius: 7,
-            marginTop: 4,
-            marginRight: 4,
+            marginTop: 5,
+            marginRight: 5,
             height: 30,
             width: 80,
             justifyContent: 'center',

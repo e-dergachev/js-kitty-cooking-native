@@ -44,7 +44,7 @@ function App() {
         cuisines={cuisines}
       />
       <Output 
-        scheme={colors[colorScheme]}
+        scheme={colors[colorScheme]} //leave it here instead of using colorScheme directly to keep the code more clear
         colorScheme={colorScheme}
         setColorScheme={setColorScheme}
         fontLoaded={fontLoaded}

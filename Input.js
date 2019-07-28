@@ -26,7 +26,6 @@ function Input(props) {
     search: {
       width: '95%',
       height: 30,
-      borderBottomWidth: 2,
       borderColor: props.scheme.color5,
       color: props.scheme.color6,
     },
@@ -81,7 +80,7 @@ function Input(props) {
   return (
     <View style={{...styles.input, ...props.navFolded ? styles.defaultTopMargin : styles.bigTopMargin}}>
       <TextInput
-        style={styles.search} 
+        style={{...styles.search, borderBottomWidth: pressStatus[0] ? 3 : 2}} 
         placeholder="What dish are you going to cook?"
         placeholderTextColor="#808080"
         onChangeText={value => setInput(value)}

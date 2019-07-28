@@ -11,6 +11,7 @@ function App() {
   const [fontLoaded, setFontLoadingStatus] = useState(false);
   const [navFolded, setNavFolded] = useState(true);
   const [cuisines, setCuisines] = useState({General: true, Vegetarian: true, American: true, French: true, Indian: true, Italian: true, Jewish: true});
+  const [dish, setDish] = useState({});
 
   async function loadFont() {
     await Font.loadAsync({
@@ -42,6 +43,7 @@ function App() {
         scheme={colors[colorScheme]}
         navFolded={navFolded}
         cuisines={cuisines}
+        setDish={setDish}
       />
       <Output 
         scheme={colors[colorScheme]} //leave it here instead of using colorScheme directly to keep the code more clear
@@ -49,6 +51,8 @@ function App() {
         setColorScheme={setColorScheme}
         fontLoaded={fontLoaded}
         cuisines={cuisines}
+        dish={dish}
+        setDish={setDish}
       />
     </View>
   );

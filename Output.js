@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TouchableHighlight, Image, Text } from 'react-native';
+import { StyleSheet, View, TouchableHighlight, Image, Text, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { getRandomDish } from './sqliteHandler';
 
@@ -21,6 +21,7 @@ function Output(props) {
             flexDirection: 'row-reverse',
             width: '100%',
             paddingRight: 5,
+            paddingBottom: 5,
         },
         cuisine: {
             borderBottomWidth: 2,
@@ -67,8 +68,10 @@ function Output(props) {
         },
         recipeBox: {
             alignItems: 'flex-start',
-            marginLeft: 5,
-            marginTop: 14,
+            paddingLeft: 5,
+            paddingRight: 5,
+            marginTop: 9,
+            marginBottom: 10,
         },
         kittyBox: {
             flex: 1,
@@ -121,40 +124,42 @@ function Output(props) {
     if (props.dish.name) {
         return (
             <View style={styles.output}>
-                <View style={styles.outputCap}>
-                    <TouchableHighlight
-                        onPress={() => setTimeout(() => getRandomDish(props.setDish, props.cuisines), 200)}
-                        onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, random: false}})}
-                        onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, random: true}})}
-                        style={{...pressStatus['random'] ? styles.buttonPressed : styles.buttonNotPressed, ...styles.button, width: 80}}
-                        underlayColor={props.scheme.color4}              
-                    >
-                        <View>
-                            <Text style={styles.outputCapText}>Random <FontAwesome name="random" color={props.scheme.color5} /></Text>
+                <ScrollView persistentScrollbar={true}>
+                    <View style={styles.outputCap}>
+                        <TouchableHighlight
+                            onPress={() => setTimeout(() => getRandomDish(props.setDish, props.cuisines), 200)}
+                            onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, random: false}})}
+                            onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, random: true}})}
+                            style={{...pressStatus['random'] ? styles.buttonPressed : styles.buttonNotPressed, ...styles.button, width: 80}}
+                            underlayColor={props.scheme.color4}              
+                        >
+                            <View>
+                                <Text style={styles.outputCapText}>Random <FontAwesome name="random" color={props.scheme.color5} /></Text>
+                            </View>
+                        </TouchableHighlight>
+                        <TouchableHighlight
+                            onPress={() => setTimeout(() => props.setDish({}), 200)} //to give time for the button animation
+                            onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, clear: false}})}
+                            onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, clear: true}})}
+                            style={{...pressStatus['clear'] ? styles.buttonPressed : styles.buttonNotPressed, ...styles.button, width: 58}}
+                            underlayColor={props.scheme.color4}
+                        >
+                            <View>
+                                <Text style={styles.outputCapText}>Clear <FontAwesome name="times" color={props.scheme.color5} /></Text>
+                            </View>
+                        </TouchableHighlight>
+                        <View style={styles.cuisine}>
+                            <Text style={styles.outputCapText}>Cuisine: {props.dish.cuisine}</Text>
                         </View>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        onPress={() => setTimeout(() => props.setDish({}), 200)} //to give time for the button animation
-                        onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, clear: false}})}
-                        onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, clear: true}})}
-                        style={{...pressStatus['clear'] ? styles.buttonPressed : styles.buttonNotPressed, ...styles.button, width: 58}}
-                        underlayColor={props.scheme.color4}
-                    >
-                        <View>
-                            <Text style={styles.outputCapText}>Clear <FontAwesome name="times" color={props.scheme.color5} /></Text>
-                        </View>
-                    </TouchableHighlight>
-                    <View style={styles.cuisine}>
-                        <Text style={styles.outputCapText}>Cuisine: {props.dish.cuisine}</Text>
                     </View>
-                </View>
-                <View style={styles.recipeBox}>
-                    <Text style={{...styles.recipeText, fontSize: 16}}>{props.dish.name}</Text>
-                    <Text style={styles.recipeText}>-------------------------------------</Text>
-                    <Text style={styles.recipeText}>{props.dish.recipe}</Text>
-                    <Text style={styles.recipeText}>-------------------------------------</Text>
-                    <Text style={styles.recipeText}>{props.dish.source}</Text>
-                </View>
+                    <View style={styles.recipeBox}>
+                        <Text style={{...styles.recipeText, fontSize: 16}}>{props.dish.name}</Text>
+                        <Text style={styles.recipeText}>-------------------------------------</Text>
+                        <Text style={styles.recipeText}>{props.dish.recipe}</Text>
+                        <Text style={styles.recipeText}>-------------------------------------</Text>
+                        <Text style={styles.recipeText}>{props.dish.source}</Text>
+                    </View>
+                </ScrollView>
             </View>
         );
     }

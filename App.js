@@ -22,13 +22,11 @@ function App() {
     setFontLoadingStatus(true);
   }
 
-  function loadDB() {
-    FileSystem.downloadAsync(
-      Asset.fromModule(require('./assets/db/recipes.sqlite3')).uri, `${FileSystem.documentDirectory}SQLite/recipes.sqlite3`)
-      .then(({ uri }) => {
-        console.log('Finished downloading to ', uri)
-      })
-      .catch(error => error);
+  async function loadDB() {
+    const check = await FileSystem.getInfoAsync(`${FileSystem.documentDirectory}SQLite/recipes.sqlite3`);
+    if (!check.exists) {
+      await FileSystem.downloadAsync(Asset.fromModule(require('./assets/db/recipes.sqlite3')).uri, `${FileSystem.documentDirectory}SQLite/recipes.sqlite3`);
+    }
   }
 
   useEffect(() => {

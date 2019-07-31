@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TouchableHighlight, Image, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { getRandomDish } from './sqliteHandler';
 
 function Output(props) {
 
@@ -122,7 +123,7 @@ function Output(props) {
             <View style={styles.output}>
                 <View style={styles.outputCap}>
                     <TouchableHighlight
-                        onPress={() => {}}
+                        onPress={() => setTimeout(() => getRandomDish(props.setDish, props.cuisines), 200)}
                         onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, random: false}})}
                         onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, random: true}})}
                         style={{...pressStatus['random'] ? styles.buttonPressed : styles.buttonNotPressed, ...styles.button, width: 80}}
@@ -162,16 +163,7 @@ function Output(props) {
             <View style={styles.output}>
                 <View style={styles.outputCap}>
                     <TouchableHighlight
-                        onPress={() => {
-                            //temporary for a mock up 
-                            props.setDish({
-                                name: "Soft Boiled Eggs", 
-                                tags: "soft boiled eggs ",
-                                recipe: "Cover the eggs with cold water in a saucepan, place over the fire, and when the water comes to the boiling point the eggs are perfectly cooked; remove at once and serve.",
-                                source: "The Golden Age Cook Book, by Henrietta Latham Dwight, 1898",
-                                cuisine: "General"
-                            });
-                        }}
+                        onPress={() => setTimeout(() => getRandomDish(props.setDish, props.cuisines), 200)}
                         onHideUnderlay={() => setPressStatus(prevState => {return {...prevState, random: false}})}
                         onShowUnderlay={() => setPressStatus(prevState => {return {...prevState, random: true}})}
                         style={{...pressStatus['random'] ? styles.buttonPressed : styles.buttonNotPressed, ...styles.button, width: 80}}

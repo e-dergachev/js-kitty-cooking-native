@@ -5,6 +5,8 @@ import Input from './Input';
 import Output from './Output';
 import NavBar from './NavBar';
 import colors from './colors.js';
+import { Asset } from 'expo-asset';
+import * as FileSystem from 'expo-file-system';
 
 function App() {
   const [colorScheme, setColorScheme] = useState("lavender");
@@ -20,7 +22,19 @@ function App() {
     setFontLoadingStatus(true);
   }
 
-  useEffect(() => {loadFont()}, []); //the empty array tells it to never re-render
+  function loadDB() {
+    FileSystem.downloadAsync(
+      Asset.fromModule(require('./assets/db/recipes.sqlite3')).uri, `${FileSystem.documentDirectory}SQLite/recipes.sqlite3`)
+      .then(({ uri }) => {
+        console.log('Finished downloading to ', uri)
+      })
+      .catch(error => error);
+  }
+
+  useEffect(() => {
+    loadFont();
+    loadDB();
+  }, []); //the empty array tells it to never re-render
 
   const styles = StyleSheet.create({
     container: {

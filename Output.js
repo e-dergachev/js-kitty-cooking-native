@@ -73,16 +73,23 @@ function Output(props) {
             marginTop: 9,
             marginBottom: 10,
         },
+        titleBox: {
+            flex: 0.6,
+            //borderWidth: 1,
+            justifyContent: 'center',
+        },
         kittyBox: {
             flex: 1,
             justifyContent: 'center',
-            marginBottom: 5,
+            //borderWidth: 1,
         },
         kitty: {
             height: '70%'//110,
         },
         bottom: {
-            justifyContent: "flex-end",
+            justifyContent: "center",
+            //borderWidth: 1,
+            flex: 0.8,
         },
         themes: {
             flexDirection: 'row',
@@ -111,6 +118,9 @@ function Output(props) {
         },
         pink: {
             backgroundColor: '#efa7c0',
+        },
+        legalBox: {
+            justifyContent: "flex-end",
         },
         legal: {
             fontSize: 11,
@@ -179,8 +189,10 @@ function Output(props) {
                         </View>
                     </TouchableHighlight>
                 </View>
-                {props.fontLoaded ? (<Text style={styles.appTitle}>JS Kitty Cooking</Text>) : null}
-                <Text style={styles.simpleText}>Old recipes from ancient cookbooks</Text>
+                <View style={styles.titleBox}>
+                    {props.fontLoaded ? (<Text style={styles.appTitle}>JS Kitty Cooking</Text>) : null}
+                    <Text style={styles.simpleText}>Old recipes from ancient cookbooks</Text>
+                </View>
                 <View style={styles.kittyBox}>
                     <Image
                         source={require('./assets/kitty.png')}
@@ -219,6 +231,8 @@ function Output(props) {
                             <View />
                         </TouchableHighlight>
                     </View>
+                </View>
+                <View style={styles.legalBox}>
                     <Text style={styles.legal}>All the recipes are taken from the public domain books on Guttenberg.com</Text>
                 </View>
             </View>

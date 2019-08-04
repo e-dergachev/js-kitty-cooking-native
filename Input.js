@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, TextInput, View, ScrollView, TouchableHighlight, Text } from 'react-native';
 import Constants from 'expo-constants';
+import { getDishByTags } from './sqliteHandler';
 
 function Input(props) {
   const [input, setInput] = useState("");
   const [pressStatus, setPressStatus] = useState({});
+  const [dishes, setDishes] = useState([]);
+
+  useEffect(() => {
+    getDishByTags(setDishes, props.cuisines, input);
+  }, [input, props.cuisines]); //launches getDishByTag on input and cuisines change
 
   const styles = StyleSheet.create({
     input: {
@@ -61,18 +67,17 @@ function Input(props) {
     return res;
   };
 
-  function suggestions(input) {
-    let tags = input.split(' ');
-    return tags.map((tag, i) =>
+  function suggestions() {
+    return dishes.map((dish, i) =>
       <TouchableHighlight
-        key={tag + i}
+        key={dish._id}
         style={suggestionStyle(i)}
-        onPress={() => {}}
+        onPress={() => props.setDish(dish)}
         onHideUnderlay={() => setPressStatus({})}
         onShowUnderlay={() => setPressStatus({[i]: true})}
         underlayColor={i%2 === 0 ? props.scheme.color2 : props.scheme.color4}
       >
-        <Text style={styles.suggestionText}>{tag}</Text>
+        <Text style={styles.suggestionText}>{dish.name}</Text>
       </TouchableHighlight>
     );
   }

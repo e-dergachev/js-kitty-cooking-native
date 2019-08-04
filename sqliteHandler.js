@@ -50,14 +50,13 @@ export function getDishByTags(setDishes, cuisines, tags) {
       [],
       (_, { rows: { _array } }) => {
         let res = [];
-        _array.forEach( el => res.push({
-          cuisine: el.cuisine,
-          name: JSON.parse(el.dish).name,
-          recipe: JSON.parse(el.dish).recipe,
-          source: JSON.parse(el.dish).source,
-          _id: el.id
-        })); //filtering out repeating results
-        res = res.map(dish => JSON.stringify(dish)).filter((v, i, a) => a.indexOf(v) === i).map(dish => JSON.parse(dish));
+        _array.forEach( el => res.push(
+          '{"cuisine":' + '"' + el.cuisine + '", "dish":' + el.dish + ',"_id":' + '"' + el.id + '"}'
+        )); //filtering out repeating results
+        res = res.filter((v, i, a) => a.indexOf(v) === i).map(dish => {
+          dish = JSON.parse(dish);
+          return {cuisine: dish.cuisine, name: dish.dish.name, recipe: dish.dish.recipe, source: dish.dish.source, _id: dish._id};
+        });
         setDishes(res);
       }
     );

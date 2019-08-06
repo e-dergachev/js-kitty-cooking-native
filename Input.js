@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StyleSheet, TextInput, View, ScrollView, TouchableHighlight, Text } from 'react-native';
 import Constants from 'expo-constants';
+import { FontAwesome } from '@expo/vector-icons';
 import { getDishByTags } from './sqliteHandler';
 
 function Input(props) {
   const [input, setInput] = useState("");
   const [pressStatus, setPressStatus] = useState({});
   const [dishes, setDishes] = useState([]);
+  let inputEl = useRef(null);
 
   useEffect(() => {
     getDishByTags(setDishes, props.cuisines, input);
@@ -17,11 +19,16 @@ function Input(props) {
       backgroundColor: props.scheme.color2,
       borderWidth: 1,
       alignItems: 'center',
-      width: '85%',
+      flex: 1,
+      //width: '85%',
       height: 152,
+      borderColor: props.scheme.color5,
+    },
+    inputWrapper: {
+      width: '90%',
+      flexDirection: 'row',
       marginTop: 15,
       marginBottom: 15,
-      borderColor: props.scheme.color5,
     },
     defaultTopMargin: {
       marginTop: 15,
@@ -29,6 +36,23 @@ function Input(props) {
     bigTopMargin: {
       marginTop: Constants.statusBarHeight + 72,
     },
+    inputButton: {
+      borderColor: props.scheme.color5,
+      borderRadius: 7,
+      marginBottom: 5,
+      marginLeft: 5,
+      height: 30,
+      width: 40,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: props.scheme.color4,          
+  },
+  inputButtonNotPressed: {
+      borderWidth: 1,
+  },        
+  inputButtonPressed: {
+      borderWidth: 2,
+  },
     search: {
       width: '95%',
       height: 30,
@@ -83,19 +107,45 @@ function Input(props) {
   }
 
   return (
-    <View style={{...styles.input, ...props.navFolded ? styles.defaultTopMargin : styles.bigTopMargin}}>
-      <TextInput
-        style={{...styles.search, borderBottomWidth: pressStatus[0] ? 3 : 2}} 
-        placeholder="What dish are you going to cook?"
-        placeholderTextColor="#808080"
-        onChangeText={value => setInput(value)}
-      />
-      <ScrollView
-        persistentScrollbar={true}
-        style={styles.scrollbar}
-      >
-        {suggestions(input)}
-      </ScrollView>
+    <View style={{...styles.inputWrapper, ...props.navFolded ? styles.defaultTopMargin : styles.bigTopMargin}}>
+      <View style={styles.input}>
+        <TextInput
+          style={{...styles.search, borderBottomWidth: pressStatus[0] ? 3 : 2}}
+          placeholder="What dish are you going to cook?"
+          placeholderTextColor="#808080"
+          onChangeText={value => setInput(value)}
+          ref={ref => inputEl = ref}
+        />
+        <ScrollView
+          persistentScrollbar={true}
+          style={styles.scrollbar}
+        >
+          {suggestions(input)}
+        </ScrollView>
+      </View>
+      <View>
+        <TouchableHighlight
+          onPress={() => {
+            setInput('');
+            inputEl.clear();
+          }}
+          onHideUnderlay={() => setPressStatus({})}
+          onShowUnderlay={() => setPressStatus({clearInput: true})}
+          style={{...pressStatus['clearInput'] ? styles.inputButtonPressed : styles.inputButtonNotPressed, ...styles.inputButton}}
+          underlayColor={props.scheme.color4}
+        >
+          <FontAwesome name="times" color={props.scheme.color5} />
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => {}}
+          onHideUnderlay={() => setPressStatus({})}
+          onShowUnderlay={() => setPressStatus({fold: true})}
+          style={{...pressStatus['fold'] ? styles.inputButtonPressed : styles.inputButtonNotPressed, ...styles.inputButton}}
+          underlayColor={props.scheme.color4}
+        >
+          <FontAwesome name="chevron-up" color={props.scheme.color5} />
+        </TouchableHighlight>
+      </View>
     </View>
   );
 }

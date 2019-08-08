@@ -8,6 +8,7 @@ function Input(props) {
   const [input, setInput] = useState("");
   const [pressStatus, setPressStatus] = useState({});
   const [dishes, setDishes] = useState([]);
+  const [searchbar, setSearchbar] = useState(true);
   let inputEl = useRef(null);
 
   useEffect(() => {
@@ -47,6 +48,15 @@ function Input(props) {
       alignItems: 'center',
       backgroundColor: props.scheme.color4,          
   },
+  unfoldButton: {
+    borderColor: props.scheme.color5,
+    borderRadius: 7,
+    height: 30,
+    width: 122,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: props.scheme.color4,       
+  },
   inputButtonNotPressed: {
       borderWidth: 1,
   },        
@@ -75,7 +85,10 @@ function Input(props) {
       color: props.scheme.color6,
       marginLeft: 5,
       marginRight: 5
-    }
+    },
+    buttonText: {
+      color: props.scheme.color8,
+  },
   });
 
   function suggestionStyle(i) {
@@ -96,7 +109,7 @@ function Input(props) {
       <TouchableHighlight
         key={dish._id}
         style={suggestionStyle(i)}
-        onPress={() => props.setDish(dish)}
+        onPress={() => setTimeout(() => props.setDish(dish), 200)}
         onHideUnderlay={() => setPressStatus({})}
         onShowUnderlay={() => setPressStatus({[i]: true})}
         underlayColor={i%2 === 0 ? props.scheme.color2 : props.scheme.color4}
@@ -106,48 +119,69 @@ function Input(props) {
     );
   }
 
-  return (
-    <View style={{...styles.inputWrapper, ...props.navFolded ? styles.defaultTopMargin : styles.bigTopMargin}}>
-      <View style={styles.input}>
-        <TextInput
-          style={{...styles.search, borderBottomWidth: pressStatus[0] ? 3 : 2}}
-          placeholder="What dish are you going to cook?"
-          placeholderTextColor="#808080"
-          onChangeText={value => setInput(value)}
-          ref={ref => inputEl = ref}
-        />
-        <ScrollView
-          persistentScrollbar={true}
-          style={styles.scrollbar}
-        >
-          {suggestions(input)}
-        </ScrollView>
+  if (searchbar) {
+    return (
+      <View style={{...styles.inputWrapper, ...props.navFolded ? styles.defaultTopMargin : styles.bigTopMargin}}>
+        <View style={styles.input}>
+          <TextInput
+            style={{...styles.search, borderBottomWidth: pressStatus[0] ? 3 : 2}}
+            placeholder="What dish are you going to cook?"
+            placeholderTextColor="#808080"
+            onChangeText={value => setInput(value)}
+            ref={ref => inputEl = ref}
+          />
+          <ScrollView
+            persistentScrollbar={true}
+            style={styles.scrollbar}
+          >
+            {suggestions(input)}
+          </ScrollView>
+        </View>
+        <View>
+          <TouchableHighlight
+            onPress={() => {
+              setInput('');
+              inputEl.clear();
+            }}
+            onHideUnderlay={() => setPressStatus({})}
+            onShowUnderlay={() => setPressStatus({clearInput: true})}
+            style={{...pressStatus['clearInput'] ? styles.inputButtonPressed : styles.inputButtonNotPressed, ...styles.inputButton}}
+            underlayColor={props.scheme.color4}
+          >
+            <FontAwesome name="times" color={props.scheme.color5} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => setTimeout(() => setSearchbar(false), 200)}
+            onHideUnderlay={() => setPressStatus({})}
+            onShowUnderlay={() => setPressStatus({fold: true})}
+            style={{...pressStatus['fold'] ? styles.inputButtonPressed : styles.inputButtonNotPressed, ...styles.inputButton}}
+            underlayColor={props.scheme.color4}
+          >
+            <FontAwesome name="chevron-up" color={props.scheme.color5} />
+          </TouchableHighlight>
+        </View>
       </View>
-      <View>
+    );
+  }
+  else {
+    return (
+      <View style={{justifyContent: 'flex-end', ...styles.inputWrapper, ...props.navFolded ? styles.defaultTopMargin : styles.bigTopMargin}}>
         <TouchableHighlight
-          onPress={() => {
-            setInput('');
-            inputEl.clear();
-          }}
+          onPress={() => setTimeout(() => setSearchbar(true), 200)}
           onHideUnderlay={() => setPressStatus({})}
-          onShowUnderlay={() => setPressStatus({clearInput: true})}
-          style={{...pressStatus['clearInput'] ? styles.inputButtonPressed : styles.inputButtonNotPressed, ...styles.inputButton}}
+          onShowUnderlay={() => setPressStatus({unfold: true})}
+          style={{...pressStatus['unfold'] ? styles.inputButtonPressed : styles.inputButtonNotPressed, ...styles.unfoldButton}}
           underlayColor={props.scheme.color4}
         >
-          <FontAwesome name="times" color={props.scheme.color5} />
-        </TouchableHighlight>
-        <TouchableHighlight
-          onPress={() => {}}
-          onHideUnderlay={() => setPressStatus({})}
-          onShowUnderlay={() => setPressStatus({fold: true})}
-          style={{...pressStatus['fold'] ? styles.inputButtonPressed : styles.inputButtonNotPressed, ...styles.inputButton}}
-          underlayColor={props.scheme.color4}
-        >
-          <FontAwesome name="chevron-up" color={props.scheme.color5} />
-        </TouchableHighlight>
+          <View>
+            <Text style={styles.buttonText}>
+              Press to unfold <FontAwesome name="chevron-down" color={props.scheme.color5} />
+            </Text>
+        </View>
+        </TouchableHighlight>      
       </View>
-    </View>
-  );
+    );
+  }
 }
 
 export default Input;

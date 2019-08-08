@@ -70,7 +70,7 @@ function NavBar(props) {
                 style={{...styles.foldedNavBar, ...styles.navbar}}
                 underlayColor={props.scheme.color4}
             >
-                <Text style={styles.msg}>Click to select cuisines</Text>
+                <Text style={styles.msg}>Press to select cuisines</Text>
             </TouchableHighlight>
         );
     }
@@ -82,8 +82,8 @@ function NavBar(props) {
                 underlayColor={props.scheme.color3}
             >
                 <View style={styles.buttons}>
-                    <Text style={{...styles.msg, marginTop: 5}}>Click cuisines to select/unselect them</Text>
-                    <Text style={{...styles.msg, marginBottom: 5}}>Click the bar again to close it</Text>
+                    <Text style={{...styles.msg, marginTop: 5}}>Press cuisines to select/unselect them</Text>
+                    <Text style={{...styles.msg, marginBottom: 5}}>Press the bar again to close it</Text>
                     <TouchableHighlight
                         onPress={() => msgOnclick('General')}
                         style={msgStyle('General')}

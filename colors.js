@@ -7,7 +7,7 @@ const colors = {   //colorSchemes
         color5: '#5d4300', //hsl(43, 100%, 18%) all borders, font-awesome
         color6: '#291e00', //hsl(44, 100%, 8%) main font
         color7: '#332500', //hsl(44, 100%, 10%) folded/unfolded navbar & cuisines fonts
-        color8: '#3d2d00' //hsl(44, 100%, 12%) output-cap font
+        color8: '#3d2d00' //hsl(44, 100%, 12%) output-cap, buttons font
     },
     green: {
         color1: '#b3ff99', //hsl(105, 100%, 80%)

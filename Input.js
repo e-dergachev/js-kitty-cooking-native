@@ -52,7 +52,7 @@ function Input(props) {
     borderColor: props.scheme.color5,
     borderRadius: 7,
     height: 30,
-    width: 122,
+    width: 90,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: props.scheme.color4,       
@@ -175,7 +175,7 @@ function Input(props) {
         >
           <View>
             <Text style={styles.buttonText}>
-              Press to unfold <FontAwesome name="chevron-down" color={props.scheme.color5} />
+              Searchbar <FontAwesome name="chevron-down" color={props.scheme.color5} />
             </Text>
         </View>
         </TouchableHighlight>      

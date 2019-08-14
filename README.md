@@ -1,6 +1,6 @@
-An interactive cookbook app, an attempt to rewrite my JS Kitty Cooking web app from React to React Native, it uses sqlite as its database. 
+An interactive cookbook app, an attempt to rewrite my JS Kitty Cooking web app from React to React Native. 
 
-The database itself and the entries that are used to populate it aren't included into this repository. To use populateDB.js script the entries should follow the following pattern:
+It uses sqlite as its database. The database itself and the entries that are used to populate it aren't included into this repository. To use populateDB.js script the entries should follow the following pattern:
 
     [{
         name: "Soft Boiled Eggs", 
@@ -12,7 +12,7 @@ The database itself and the entries that are used to populate it aren't included
 
 The "tags" key-value pair is used to designate the tags to look for the requested dishes, "cuisine" is used to designate the cuisine category of the entry, the rest is used to format the output.
 
-The app was created with Create React Native App, it's a managed Expo project, so it follows the usual commands - 'npm start' to run it in the development mode, 'npm eject' to eject from the managed workflow and the usual expo build commands.
+The app was created with Create React Native App, it's a managed Expo project, so it follows the usual commands - 'npm start' to run it in the development mode, 'npm eject' to eject from the managed workflow and the usual expo build commands. It has a basic unit testing setup that can be run with 'npm test'.
 
 Below are some app screenshots:
 

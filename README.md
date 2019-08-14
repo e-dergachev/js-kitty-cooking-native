@@ -28,6 +28,6 @@ Looking for a dish by tags:
 
 ![Looking For A Dish By Tags](/screenshots/looking_for_a_dish_by_tags.png)
 
-Selecting a cuisine:
+Selecting cuisines:
 
 ![Cuisine Selection](/screenshots/cuisine_selection.png)

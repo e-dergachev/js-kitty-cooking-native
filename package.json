@@ -5,7 +5,12 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "node_modules/.bin/jest",
+    "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand"
+  },
+  "jest": {
+    "preset": "jest-expo"
   },
   "dependencies": {
     "expo": "^33.0.0",
@@ -15,12 +20,13 @@
     "expo-font": "^5.0.1",
     "expo-sqlite": "^5.0.1",
     "react": "16.8.3",
-    "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-web": "^0.11.4"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.1.1"
+    "babel-preset-expo": "^5.1.1",
+    "jest-expo": "^34.0.0",
+    "react-test-renderer": "16.8.3"
   },
   "private": true
 }

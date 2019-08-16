@@ -1,0 +1,972 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Unit Tests renders app wrapper correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#e6e6fa",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#aeafc2",
+        "borderColor": "#5d4300",
+        "borderWidth": 1,
+        "height": 55,
+        "justifyContent": "center",
+        "marginTop": 22,
+        "width": "99%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#332500",
+          "fontSize": 15,
+        }
+      }
+    >
+      Press to select cuisines
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "marginBottom": 15,
+        "marginTop": 15,
+        "width": "90%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#edeeff",
+          "borderColor": "#5d4300",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 152,
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="What dish are you going to cook?"
+        placeholderTextColor="#808080"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderBottomWidth": 2,
+            "borderColor": "#5d4300",
+            "color": "#291e00",
+            "height": 30,
+            "width": "95%",
+          }
+        }
+        underlineColorAndroid="transparent"
+      />
+      <RCTScrollView
+        persistentScrollbar={true}
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+    <View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ddddf8",
+            "borderColor": "#5d4300",
+            "borderRadius": 7,
+            "borderWidth": 1,
+            "height": 30,
+            "justifyContent": "center",
+            "marginBottom": 5,
+            "marginLeft": 5,
+            "width": 40,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ddddf8",
+            "borderColor": "#5d4300",
+            "borderRadius": 7,
+            "borderWidth": 1,
+            "height": 30,
+            "justifyContent": "center",
+            "marginBottom": 5,
+            "marginLeft": 5,
+            "width": 40,
+          }
+        }
+      >
+        <Text />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#edeeff",
+        "borderColor": "#5d4300",
+        "borderWidth": 1,
+        "flex": 1,
+        "marginBottom": 15,
+        "width": "90%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row-reverse",
+          "paddingBottom": 5,
+          "paddingRight": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ddddf8",
+            "borderColor": "#5d4300",
+            "borderRadius": 7,
+            "borderWidth": 1,
+            "height": 30,
+            "justifyContent": "center",
+            "marginRight": 5,
+            "marginTop": 5,
+            "width": 80,
+          }
+        }
+      >
+        <View
+          style={null}
+        >
+          <Text
+            style={
+              Object {
+                "color": "#3d2d00",
+              }
+            }
+          >
+            Random 
+            <Text />
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.6,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#291e00",
+            "textAlign": "center",
+          }
+        }
+      >
+        Old recipes from ancient cookbooks
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={1}
+        style={
+          Object {
+            "height": "70%",
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.8,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#291e00",
+            "textAlign": "center",
+          }
+        }
+      >
+        Choose a color scheme:
+      </Text>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginTop": 5,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#e6e6fa",
+              "borderColor": "#5d4300",
+              "borderWidth": 1,
+              "height": 45,
+              "width": 65,
+            }
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#b3ff99",
+              "borderColor": "#5d4300",
+              "borderWidth": 1,
+              "height": 45,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "width": 65,
+            }
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#efa7c0",
+              "borderColor": "#5d4300",
+              "borderWidth": 1,
+              "height": 45,
+              "width": 65,
+            }
+          }
+        >
+          <View
+            style={null}
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#291e00",
+            "fontSize": 11,
+            "marginBottom": 5,
+            "marginTop": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        All the recipes are taken from the public domain books on Guttenberg.com
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Snapshot Unit Tests renders input correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "marginBottom": 15,
+      "marginTop": 92,
+      "width": "90%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#edeeff",
+        "borderColor": "#5d4300",
+        "borderWidth": 1,
+        "flex": 1,
+        "height": 152,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="What dish are you going to cook?"
+      placeholderTextColor="#808080"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderBottomWidth": 2,
+          "borderColor": "#5d4300",
+          "color": "#291e00",
+          "height": 30,
+          "width": "95%",
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <RCTScrollView
+      persistentScrollbar={true}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ddddf8",
+          "borderColor": "#5d4300",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "height": 30,
+          "justifyContent": "center",
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "width": 40,
+        }
+      }
+    >
+      <Text />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ddddf8",
+          "borderColor": "#5d4300",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "height": 30,
+          "justifyContent": "center",
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "width": 40,
+        }
+      }
+    >
+      <Text />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Snapshot Unit Tests renders navbar correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#ddddf8",
+      "borderColor": "#5d4300",
+      "borderWidth": 1,
+      "height": 420,
+      "marginTop": 22,
+      "position": "absolute",
+      "width": "99%",
+      "zIndex": 100,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#332500",
+          "fontSize": 15,
+          "marginTop": 5,
+        }
+      }
+    >
+      Press cuisines to select/unselect them
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#332500",
+          "fontSize": 15,
+          "marginBottom": 5,
+        }
+      }
+    >
+      Press the bar again to close it
+    </Text>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#aeafc2",
+          "borderColor": "#5d4300",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginTop": 5,
+          "width": 225,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#332500",
+            "fontSize": 15,
+          }
+        }
+      >
+        General
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#aeafc2",
+          "borderColor": "#5d4300",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginTop": 5,
+          "width": 225,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#332500",
+            "fontSize": 15,
+          }
+        }
+      >
+        Vegetarian
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#aeafc2",
+          "borderColor": "#5d4300",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginTop": 5,
+          "width": 225,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#332500",
+            "fontSize": 15,
+          }
+        }
+      >
+        American
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#aeafc2",
+          "borderColor": "#5d4300",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginTop": 5,
+          "width": 225,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#332500",
+            "fontSize": 15,
+          }
+        }
+      >
+        French
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#aeafc2",
+          "borderColor": "#5d4300",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginTop": 5,
+          "width": 225,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#332500",
+            "fontSize": 15,
+          }
+        }
+      >
+        Indian
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#aeafc2",
+          "borderColor": "#5d4300",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginTop": 5,
+          "width": 225,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#332500",
+            "fontSize": 15,
+          }
+        }
+      >
+        Italian
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#aeafc2",
+          "borderColor": "#5d4300",
+          "borderRadius": 7,
+          "borderWidth": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginTop": 5,
+          "width": 225,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#332500",
+            "fontSize": 15,
+          }
+        }
+      >
+        Jewish
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Snapshot Unit Tests renders output correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#edeeff",
+      "borderColor": "#5d4300",
+      "borderWidth": 1,
+      "flex": 1,
+      "marginBottom": 15,
+      "width": "90%",
+    }
+  }
+>
+  <RCTScrollView
+    persistentScrollbar={true}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row-reverse",
+            "paddingBottom": 5,
+            "paddingRight": 5,
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ddddf8",
+              "borderColor": "#5d4300",
+              "borderRadius": 7,
+              "borderWidth": 1,
+              "height": 30,
+              "justifyContent": "center",
+              "marginRight": 5,
+              "marginTop": 5,
+              "width": 80,
+            }
+          }
+        >
+          <View
+            style={null}
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#3d2d00",
+                }
+              }
+            >
+              Random 
+              <Text />
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ddddf8",
+              "borderColor": "#5d4300",
+              "borderRadius": 7,
+              "borderWidth": 1,
+              "height": 30,
+              "justifyContent": "center",
+              "marginRight": 5,
+              "marginTop": 5,
+              "width": 58,
+            }
+          }
+        >
+          <View
+            style={null}
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#3d2d00",
+                }
+              }
+            >
+              Clear 
+              <Text />
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomWidth": 2,
+              "borderColor": "#5d4300",
+              "height": 30,
+              "justifyContent": "center",
+              "marginLeft": "auto",
+              "marginTop": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#3d2d00",
+              }
+            }
+          >
+            Cuisine: 
+            Vegetarian
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "marginBottom": 10,
+            "marginTop": 9,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#291e00",
+              "fontSize": 16,
+            }
+          }
+        >
+          Potato Pie
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#291e00",
+            }
+          }
+        >
+          -------------------------------------
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#291e00",
+            }
+          }
+        >
+          Slice potatoes and onions, stew with a little water until nearly done, put into a pie-dish, flavour with herbs, pepper, and salt, add a little soaked tapioca and very little butter, cover with short wheatmeal crust, and bake 1 hour. To make a very plain pie-crust use about 2 oz. of butter or a proportionate quantity of Allinson frying oil to 1 lb. of wheatmeal. Roll or touch with the fingers as little as possible, and mix with milk instead of water. Eat this pie with green vegetables.
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#291e00",
+            }
+          }
+        >
+          -------------------------------------
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#291e00",
+            }
+          }
+        >
+          The Allinson Vegetarian Cookery Book, by Thomas R. Allinson, 1915
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

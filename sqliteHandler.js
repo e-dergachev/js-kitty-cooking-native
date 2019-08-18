@@ -101,4 +101,5 @@ export function getRandomDish(setDish, cuisines) {
     },
     error => console.log(error));
   }
+  //db._db.close(); //on deleting/upgrading the recipes db like adding new recipes and stuff, uncomment this line, call the function and then comment the line again, see https://github.com/expo/expo/issues/639
 }

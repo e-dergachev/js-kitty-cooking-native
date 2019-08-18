@@ -23,6 +23,7 @@ function App() {
   }
 
   async function loadDB() {
+    //await FileSystem.deleteAsync(`${FileSystem.documentDirectory}SQLite/recipes.sqlite3`);
     const check = await FileSystem.getInfoAsync(`${FileSystem.documentDirectory}SQLite/recipes.sqlite3`);
     if (!check.exists) {
       await FileSystem.downloadAsync(Asset.fromModule(require('./assets/db/recipes.sqlite3')).uri, `${FileSystem.documentDirectory}SQLite/recipes.sqlite3`);

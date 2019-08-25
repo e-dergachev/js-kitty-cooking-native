@@ -16,7 +16,7 @@ function getTagPiece(input) {
   let tagPiece = '';
   filtered.forEach((tag, i) => {
     tagPiece += 'tags like "%' + tag + '%"';
-      if (i !== filtered.length - 1) {tagPiece += ' OR '} //currently it is set to look for any tag, not for their combination
+      if (i !== filtered.length - 1) {tagPiece += ' AND '} //currently it is set to look for the combination of tags, not for any tag
     });
   tagPiece = '(' + tagPiece + ')';
   return tagPiece;

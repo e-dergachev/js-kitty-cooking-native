@@ -1,0 +1,19 @@
+{
+    "master": {
+        "awscloudformation": {
+            "AuthRoleName": "jskittycookingnative-master-20190929224512-authRole",
+            "UnauthRoleArn": "arn:aws:iam::849013255255:role/jskittycookingnative-master-20190929224512-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::849013255255:role/jskittycookingnative-master-20190929224512-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "jskittycookingnative-master-20190929224512-deployment",
+            "UnauthRoleName": "jskittycookingnative-master-20190929224512-unauthRole",
+            "StackName": "jskittycookingnative-master-20190929224512",
+            "StackId": "arn:aws:cloudformation:us-east-1:849013255255:stack/jskittycookingnative-master-20190929224512/faac1e60-e2b6-11e9-8a95-12f2c8f206e2"
+        },
+        "categories": {
+            "auth": {
+                "cognitof20e745c": {}
+            }
+        }
+    }
+}

@@ -13,6 +13,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "aws-amplify": "^1.1.40",
     "expo": "^33.0.0",
     "expo-ads-admob": "^5.0.1",
     "expo-asset": "^6.0.0",

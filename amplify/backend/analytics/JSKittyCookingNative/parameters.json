@@ -1,0 +1,20 @@
+{
+    "appName": "JSKittyCookingNative",
+    "roleName": "pinpointLambdaRoleda9a2487",
+    "cloudWatchPolicyName": "cloudWatchPolicyda9a2487",
+    "pinpointPolicyName": "pinpointPolicyda9a2487",
+    "authPolicyName": "pinpoint_amplify_da9a2487",
+    "unauthPolicyName": "pinpoint_amplify_da9a2487",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

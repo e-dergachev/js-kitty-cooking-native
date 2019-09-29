@@ -7,6 +7,10 @@ import NavBar from './NavBar';
 import colors from './colors.js';
 import { Asset } from 'expo-asset';
 import * as FileSystem from 'expo-file-system';
+import Amplify, { Analytics } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
 
 function App() {
   const [colorScheme, setColorScheme] = useState("lavender");
@@ -24,10 +28,6 @@ function App() {
 
   async function loadDB() {
     //await FileSystem.deleteAsync(`${FileSystem.documentDirectory}SQLite/recipes.sqlite3`);
-    /*const check = await FileSystem.getInfoAsync(`${FileSystem.documentDirectory}SQLite/recipes.sqlite3`);
-    if (!check.exists) {
-      await FileSystem.downloadAsync(Asset.fromModule(require('./assets/db/recipes.sqlite3')).uri, `${FileSystem.documentDirectory}SQLite/recipes.sqlite3`);
-    }*/
     try {
       await FileSystem.makeDirectoryAsync(`${FileSystem.documentDirectory}SQLite`, {
         intermediates: true
@@ -46,6 +46,13 @@ function App() {
     loadFont();
     loadDB();
   }, []); //the empty array tells it to never re-render
+
+  useEffect(() => {
+    Analytics.record({
+      name: 'dishShown', 
+      attributes: { cuisine: dish.cuisine }
+  });
+  }, [dish]); //launches an event when a dish is shown
 
   const styles = StyleSheet.create({
     container: {

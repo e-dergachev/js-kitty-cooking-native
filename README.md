@@ -1,4 +1,4 @@
-An interactive cookbook app, an attempt to rewrite my JS Kitty Cooking web app from React to React Native. 
+An interactive cookbook app, a rewrite of my JS Kitty Cooking web app from React to React Native. 
 
 It uses sqlite as its database. The database itself and the entries that are used to populate it aren't included into this repository. To use populateDB.js script the entries should follow the following pattern:
 

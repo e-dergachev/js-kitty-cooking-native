@@ -14,7 +14,7 @@ function Output(props) {
             alignItems: 'center',
             width: '90%',
             borderColor: props.scheme.color5,
-            marginBottom: 15,
+            //marginBottom: 15,
             flex: 1,
         },
         outputCap: {

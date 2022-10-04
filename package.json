@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "aws-amplify": "^1.1.40",
-    "expo": "^33.0.0",
+    "expo": "^46.0.14",
     "expo-ads-admob": "^5.0.1",
     "expo-asset": "^6.0.0",
     "expo-constants": "^5.0.1",
